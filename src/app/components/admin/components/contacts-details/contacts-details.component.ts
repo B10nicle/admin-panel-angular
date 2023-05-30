@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {map, Observable} from "rxjs";
 import {IUser} from "../../models/IUser";
 import {ActivatedRoute} from "@angular/router";
+import {AdminService} from "../../services/admin.service";
 
 @Component({
   selector: 'app-contacts-details',
@@ -9,13 +10,19 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./contacts-details.component.scss']
 })
 export class ContactsDetailsComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {
+  user!: Observable<IUser>;
+  component: boolean = true;
 
+  constructor(private activatedRoute: ActivatedRoute,
+              private adminService: AdminService) {
   }
 
-  user!: Observable<IUser>;
+  hideComponent() {
+    return this.component = false;
+  }
 
   ngOnInit(): void {
     this.user = this.activatedRoute.data.pipe(map(data => data?.['user']));
+    this.adminService.getLoader();
   }
 }

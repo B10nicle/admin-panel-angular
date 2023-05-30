@@ -4,7 +4,7 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import {catchError, delay, EMPTY, Observable, of} from 'rxjs';
+import {catchError, delay, EMPTY, Observable} from 'rxjs';
 import {AdminService} from "../services/admin.service";
 import {IUser} from "../models/IUser";
 
@@ -18,7 +18,7 @@ export class UserResolver implements Resolve<IUser> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IUser> {
     return this.adminService
       .getPerson(route.params?.["id"])
-      .pipe(delay(500),
+      .pipe(delay(700),
         catchError(() => {
           this.router.navigate(['admin/contacts'])
           return EMPTY;

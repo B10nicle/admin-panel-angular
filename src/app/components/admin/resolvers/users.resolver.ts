@@ -18,6 +18,6 @@ export class UsersResolver implements Resolve<IUser[]> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IUser[]> {
     return this.adminService
       .getPersonalList()
-      .pipe(delay(500));
+      .pipe(delay(700));
   }
 }

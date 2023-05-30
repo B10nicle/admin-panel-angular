@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../../services/auth.service";
-import {filter, map, merge, Observable} from "rxjs";
-import {ResolveEnd, ResolveStart, Router} from "@angular/router";
+import {AdminService} from "../../services/admin.service";
 
 @Component({
   selector: 'app-header',
@@ -10,21 +9,14 @@ import {ResolveEnd, ResolveStart, Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService,
-              private router: Router,) {
-
+              private adminService: AdminService) {
   }
-
-  private showLoader!: Observable<boolean>;
-  private hideLoader!: Observable<boolean>;
-  isLoading!: Observable<boolean>;
 
   logout() {
     this.authService.logout();
   }
 
   ngOnInit(): void {
-    this.hideLoader = this.router.events.pipe(filter(e => e instanceof ResolveEnd), map(() => false));
-    this.showLoader = this.router.events.pipe(filter(e => e instanceof ResolveStart), map(() => true));
-    this.isLoading = merge(this.hideLoader, this.showLoader);
+    this.adminService.getLoader();
   }
 }

@@ -7,7 +7,7 @@ import {HomeComponent} from './components/home/home.component';
 import {ContactsComponent} from './components/contacts/contacts.component';
 import {ContactsDetailsComponent} from './components/contacts-details/contacts-details.component';
 import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashboard.component';
-
+import {SpinnerComponent} from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashbo
     HomeComponent,
     ContactsComponent,
     ContactsDetailsComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    SpinnerComponent,
   ],
   imports: [
     CommonModule,
