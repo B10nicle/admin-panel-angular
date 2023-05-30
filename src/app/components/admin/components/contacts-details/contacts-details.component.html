@@ -4,7 +4,7 @@
       <div class="card-body p-2 text-center">
         <div>
           <h2 class="fs-3 text-decoration-underline">User Details:</h2>
-          <section *ngIf="user | async as user">
+          <section *ngIf="user$ | async as user">
             <h3 class="fs-5">{{user.name}}</h3>
             <p class="fs-6">{{user.email}}</p>
           </section>
@@ -15,7 +15,6 @@
   </div>
 </div>
 
-<div class="d-flex h-75 align-items-center justify-content-center" *ngIf="component === false">
-  <h1 class="text-center text-light">Loading...</h1>
+<div class="d-flex h-75 align-items-center justify-content-center flex-column" *ngIf="component === false">
   <app-spinner></app-spinner>
 </div>

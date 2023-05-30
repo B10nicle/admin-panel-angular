@@ -10,7 +10,7 @@ import {AdminService} from "../../services/admin.service";
   styleUrls: ['./contacts-details.component.scss']
 })
 export class ContactsDetailsComponent implements OnInit {
-  user!: Observable<IUser>;
+  user$!: Observable<IUser>;
   component: boolean = true;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -22,7 +22,7 @@ export class ContactsDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = this.activatedRoute.data.pipe(map(data => data?.['user']));
+    this.user$ = this.activatedRoute.data.pipe(map(data => data?.['user']));
     this.adminService.getLoader();
   }
 }
