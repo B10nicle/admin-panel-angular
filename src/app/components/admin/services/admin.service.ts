@@ -1,7 +1,7 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IUser} from "../models/IUser";
-import {filter, map, merge, Observable, of} from "rxjs";
+import {filter, map, merge, Observable} from "rxjs";
 import {ResolveEnd, ResolveStart, Router} from "@angular/router";
 
 @Injectable({
