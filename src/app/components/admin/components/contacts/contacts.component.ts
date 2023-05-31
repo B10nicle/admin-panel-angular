@@ -11,14 +11,14 @@ import {AdminService} from "../../services/admin.service";
 })
 export class ContactsComponent implements OnInit {
   personalList$!: Observable<IUser[]>;
-  component: boolean = true;
+  shown: boolean = true;
 
   constructor(private activatedRoute: ActivatedRoute,
               private adminService: AdminService) {
   }
 
   hideComponent() {
-    return this.component = false;
+    return this.shown = false;
   }
 
   ngOnInit(): void {
