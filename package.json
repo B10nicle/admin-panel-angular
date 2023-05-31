@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build --base-href \"https://b10nicle.github.io/admin-panel-angular/\"",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build gh": "ng build --base-href \"https://b10nicle.github.io/admin-panel-angular/\"",
     "deploy": "npx angular-cli-ghpages --dir=dist/admin-panel-angular"
   },
   "private": true,

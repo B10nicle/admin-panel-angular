@@ -1,7 +1,0 @@
-{
-  "/*": {
-    "target": "http://localhost:4",
-    "changeOrigin": false,
-    "logLevel": "debug"
-  }
-}
