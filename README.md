@@ -1,4 +1,4 @@
-## Admin Panel
+# Admin Panel
 
 Special thanks to Denis Bulkin for this really cool project!
 
